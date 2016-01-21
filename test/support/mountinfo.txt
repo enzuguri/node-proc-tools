@@ -1,0 +1,28 @@
+634 618 0:28 / / ro,nosuid,nodev,noexec,relatime - tmpfs  ro,size=8k,mode=555
+635 634 8:1 /opt/ui/pmui /app rw,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+636 634 8:1 /opt/zinc-trunk/var/applications/data/air/mainui/stagecraft-data /opt/adobe/stagecraft/data rw,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+637 636 7:0 /tls_root_psi /opt/adobe/stagecraft/data/config/ssl/certs/unencrypted ro,nosuid,relatime - cramfs /dev/loop0 ro
+638 636 254:3 /rct /opt/adobe/stagecraft/data/volumes/images rw,nosuid,relatime - ext3 /dev/mapper/sda6 rw,errors=continue,data=writeback
+639 634 8:1 /opt/zinc-trunk/var/applications/data/air/mainui/log /opt/zinc-trunk/var/log rw,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+640 634 8:1 /opt/zinc-trunk/var/applications/data/air/mainui/http-cache /opt/zinc-trunk/var/http-cache rw,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+641 634 0:15 / /dev rw,nosuid,noexec,relatime - tmpfs tmpfs rw,mode=755
+642 634 0:3 / /proc rw,nosuid,noexec,relatime - proc  rw
+643 634 254:2 /tmp/youview/applications/air/0 /tmp rw,nosuid,nodev,noexec,relatime - ext3 /dev/mapper/sda5 rw,errors=continue,data=writeback
+644 634 8:1 /lib /lib rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+645 634 8:1 /usr/lib /usr/lib rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+646 634 8:1 /usr/local/lib /usr/local/lib rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+647 634 8:1 /usr/local/etc /usr/local/etc rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+648 634 8:1 /bin /bin rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+649 634 8:1 /usr/bin /usr/bin rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+650 634 8:1 /etc /etc rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+651 634 8:1 /opt/stagecraft-2.0 /opt/stagecraft-2.0 rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+652 634 8:1 /opt/adobe/stagecraft/fonts /opt/adobe/stagecraft/fonts rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+653 634 8:1 /opt/zinc-trunk/lib /opt/zinc-trunk/lib rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+654 634 8:1 /opt/zinc-trunk/share /opt/zinc-trunk/share rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+655 634 8:1 /opt/zinc-trunk/oss/var/applications/identities /opt/zinc-trunk/oss/var/applications/identities rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+656 634 8:1 /opt/zinc-trunk/oss/lib /opt/zinc-trunk/oss/lib rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+657 634 8:1 /opt/zinc-trunk/bin /opt/zinc-trunk/bin rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+658 634 8:1 /opt/zinc-trunk/oss/bin /opt/zinc-trunk/oss/bin rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+659 634 8:1 /opt/youview/pki /opt/youview/pki rw,nosuid,relatime - ext3 /dev/root rw,errors=continue,data=writeback
+660 634 0:13 /dfb /run/dfb rw,nosuid,relatime - tmpfs tmpfs rw,mode=755
+661 634 0:16 /etc /mnt/flash/etc rw,nosuid,relatime - ubifs ubi6:db rw

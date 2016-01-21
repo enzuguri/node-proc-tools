@@ -1,0 +1,13 @@
+{ "name": "proc-tools",
+  "version": "0.0.1",
+  "author": "Alex Fell <alex@alexfell.com>",
+  "description": "An library for dealing with the /proc/ command",
+  "main": "./lib/Proc",
+  "engines": { "node": ">=0.8.7" },
+  "dependencies": {
+    "ssh2": "0.2.12"
+  },
+  "keywords": [ "ssh", "proc", "shell", "exec", "remote", "client" ],
+  "licenses": [ { "type": "MIT", "url": "http://github.com/***/raw/master/LICENSE" } ],
+  "repository" : { "type": "git", "url": "http://github.com/***" }
+}

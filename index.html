@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Smaps HTML Table</title>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="bootstrap-sortable.css" rel="stylesheet">
+
+  </head>
+  <body>
+    
+  <div class="container">
+    <h1>Proc text parser</h1>
+
+    <div class="row" id="sample_container_id">
+      <div class="span3">
+        <form role="form" id="parserChoice">
+          
+        </form>
+      </div>
+      <div class="span9">
+        <form role="form">
+          <textarea class="form-control" rows="6" id="smapsText" style="width:100%;"></textarea>
+        </form>
+        <button type="submit" id="parseBtn" class="btn btn-primary">Parse Text</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span12">
+      <table class="table table-bordered table-hover table-striped sortable">
+      <thead id="smapsHeader">
+      </thead>
+      <tbody id="smapsData">
+      </tbody>
+      </table>
+      </div>
+    </div>
+
+
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script src='moment.min.js'></script>
+    <script src='bootstrap-sortable.js'></script>
+    <script src="lib/parsers/smaps.js"></script>
+    <script src="lib/parsers/status.js"></script>
+    <script src="lib/parsers/maps.js"></script>
+    <script src="lib/parsers/statm.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        var tHeader = $("#smapsHeader"), tBody = $("#smapsData"), input = $("#smapsText");
+
+        var parserMap = {
+          "Smaps" : Smaps,
+          "Status" : Status,
+          "Maps" : Maps,
+          "Statm" : Statm
+        }
+
+        function renderTableData(data, headerNames){
+          var trs = $.map(data, function(item){
+
+            var tds = $.map(headerNames, function(name){
+              return $("<td>" + item[name] + "</td>");
+            });
+
+            return $("<tr/>").append(tds);
+          });
+          
+          tBody.html(null);
+          tBody.append(trs);
+          $.bootstrapSortable(false);
+        }
+
+        function setupTableHeaders(headers){
+          var ths = $.map(headers, function(name){
+            var th = $("<th/>");
+            th.text(name);
+            return th;
+          });
+
+          tHeader.html(null);
+          $("<tr/>").append(ths).appendTo(tHeader);
+        }
+
+        function parseText(text, parser){
+          var headerNames = parser.getHeaderNames();
+          setupTableHeaders(headerNames);
+          var data = parser.parseText(text);
+          renderTableData($.isArray(data) ? data : [data], headerNames);
+        }
+
+        //Add choices
+        var els = $.map(parserMap, function(value, key){
+          var input = $("<input/>").attr({type:"radio", name:"parserChoice", value:key});
+          var label = $("<label/>").append(input, key);
+          return $("<div class='radio'/>").append(label);
+        });
+
+        $("#parserChoice").append(els);
+
+        //add click functionality
+        $("#parseBtn").click(function(e){
+          e.preventDefault();
+          var key = $("#parserChoice input:radio:checked").val();
+          parseText(input.val(), parserMap[key]);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+Name:	stagecraft
+State:	S (sleeping)
+Tgid:	1259
+Pid:	1259
+PPid:	1255
+TracerPid:	0
+Uid:	16384	16384	16384	16384
+Gid:	20485	20485	20485	20485
+FDSize:	256
+Groups:	501 607 701 
+VmPeak:	  611776 kB
+VmSize:	  283732 kB
+VmLck:	       0 kB
+VmHWM:	   70860 kB
+VmRSS:	   70568 kB
+VmData:	  192280 kB
+VmStk:	      84 kB
+VmExe:	      12 kB
+VmLib:	   48232 kB
+VmPTE:	     508 kB
+Threads:	27
+SigQ:	0/2462
+SigPnd:	00000000000000000000000000000000
+ShdPnd:	00000000000000000000000000000000
+SigBlk:	fffffffffffffffffffffffe7fbfbefc
+SigIgn:	00000000000000000000000000000000
+SigCgt:	000000000000000000000001e00046bf
+CapInh:	0000000000000020
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	fffffffffffffeff
+voluntary_ctxt_switches:	59520
+nonvoluntary_ctxt_switches:	669
